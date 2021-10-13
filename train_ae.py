@@ -12,9 +12,10 @@ def parse_config():
     parser.add_argument("--past_len", type=int, default=20, help="length of past (in timesteps)")
     parser.add_argument("--future_len", type=int, default=40, help="length of future (in timesteps)")
     parser.add_argument("--dim_embedding_key", type=int, default=48)
+    parser.add_argument("--intervals", type=int, default=20)
 
     parser.add_argument("--dataset_file", default="kitti_dataset.json", help="dataset file")
-    parser.add_argument("--info", type=str, default='', help='Name of training. '
+    parser.add_argument("--info", type=str, default='test', help='Name of training. '
                                                              'It will be used in tensorboard log and test folder')
     return parser.parse_args()
 
@@ -28,3 +29,5 @@ def main(config):
 if __name__ == "__main__":
     config = parse_config()
     main(config)
+
+# 执行命令：/home/xzk/anaconda3/envs/l_pt1/bin/python /home/xzk/lcy/Project/MANTRA-CVPR20/train_ae.py
